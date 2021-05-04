@@ -1,15 +1,16 @@
 const express = require('express')
-const bodyParser = require('body-parser');
 const app = express()
-const AvatarGenerator = require('avatar-generator')
-app.use(bodyParser.json());
+const userRoutes = require('./routes/user.routes')
 
 var cors = require('cors')
 app.use(cors())
 //npm init -> te crea el package json
 //express "npm i express"
 
-
+//settings
+app.set('port', 3000)
+//rutas
+app.use(userRoutes);
 //rutas tipo get, post, put, delete
 app.get('/',(request, response) => {
     response.json({
@@ -38,4 +39,4 @@ app.post('/', async (request, response) => {
     }
 })
 
-app.listen('3000')
+module.exports = app
