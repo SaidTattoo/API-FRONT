@@ -250,17 +250,6 @@ const users = [
   }
 ]
 
-// const storage = multer.diskStorage({
-//   destination(req, file, cb) {
-//     cb(null, 'uploads/');
-//   },
-//   filename(req, file, cb) {
-//     cb(null, uuid.v4() + path.extname(file.originalname));
-//   }
-// });
-// const upload = multer({
-//   storage: storage
-// });
 
 
 
@@ -313,6 +302,23 @@ app.get('/getuser/:id', (request, response) => {
 
   
 })
+
+
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'uploads');
+  },
+  filename:function(req, file, cb) {
+    cb(null,`${Date.now()}-${file.originalname}`);
+  }
+});
+const upload = multer({storage:storage})
+
+app.post('/upload', upload.single('myFile'),(req,res) => {
+  res.json({data:"upload image"})
+})
+
 
 
 module.exports = app

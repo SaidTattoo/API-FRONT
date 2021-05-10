@@ -15,6 +15,6 @@ export class UserServiceService {
     return this.http.get("http://localhost:3000/getuser/"+id)
   }
   uploadImage(imageData:any){
-    return this.http.post("http://localhost:3000/profile",imageData)
+    return this.http.post("http://localhost:3000/upload",imageData)
   }
 }
