@@ -1,0 +1,12 @@
+<form [formGroup]="createUser" method="POST" enctype="multipart/form-data" (ngSubmit)="onSubmit()" >
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre"  matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input formControlName="apellido"  matInput>
+      </mat-form-field>
+     <input formControlName="imagen" type="file">
+     <button mat-flat-button color="primary" [disabled]="!createUser.valid">Ingresar</button>
+</form>

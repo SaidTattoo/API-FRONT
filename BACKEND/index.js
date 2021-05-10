@@ -1,7 +1,7 @@
 const app = require('./app')
-const {createConnection} = require('./db/database')
+// const {createConnection} = require('./db/database')
 
-createConnection()
+// createConnection()
 
  function main () {
      app.listen(3000)

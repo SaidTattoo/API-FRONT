@@ -1,0 +1,22 @@
+<div class="body">
+    <mat-card style="text-align: center;">
+        <form [formGroup]="loginForm" method="POST" (ngSubmit)="onSubmit()">
+          <img  width="100" [src]=imgLogin/>
+            <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input  formControlName="name"  matInput placeholder="pat@example.com" autocomplete="off" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+          </mat-form-field>
+          <br>
+          <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input  autocomplete="off" matInput formControlName="password"  [type]="hide ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide"   [attr.aria-label]="'Hide password'"  [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <br>
+          <button mat-flat-button color="primary" [disabled]="!loginForm.valid">Ingresar</button>
+        </form>
+    </mat-card>
+</div>

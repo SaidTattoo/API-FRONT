@@ -1,0 +1,53 @@
+
+.sidenav{
+    position:fixed;
+    padding:10px;
+    background-color:white;
+    -webkit-box-shadow: 0px 0px 39px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 39px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 39px -10px rgba(0,0,0,0.75);
+    height:100vh;
+   
+}
+.activeNav{
+  color:#E5512B !important;
+  font-weight: bold;
+}
+.title{
+    padding:10px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #2883C2;
+    opacity: 1;
+    font-weight: bold;
+    font-size:18px;
+}
+.text{
+  margin-left:20px;
+  text-align: left;
+  font-family: 'Nunito';
+  font-weight:  Regular;
+  font-size: 14px;
+  letter-spacing: 0px;
+  color: #505050;
+  opacity: 1;
+}
+.border-blue{
+  padding:10px;
+margin-left:-10px;
+border-left:5px solid #2883C2;
+}
+
+.scrollandhidde {
+  overflow-y: scroll; 
+}
+
+.scrollandhidde::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollandhidde {
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;  /* Firefox */
+}
