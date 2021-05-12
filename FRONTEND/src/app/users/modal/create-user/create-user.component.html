@@ -10,7 +10,6 @@
      <input (change)="capturarFile($event)"  type="file">
       <div *ngIf="previsualizacion">
         <img width="250px" [src]="previsualizacion">
-
       </div>
           <button mat-flat-button color="primary" [disabled]="!createUser.valid">Ingresar</button>
 </form>

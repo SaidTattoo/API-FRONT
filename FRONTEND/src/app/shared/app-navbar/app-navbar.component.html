@@ -4,4 +4,13 @@
     </button>
     <span>DASHBOARD</span>
     <span class="example-spacer"></span>
+    
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+    </button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Editar perfil</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>Cerrar sesión</button>
+</mat-menu>
 </mat-toolbar>

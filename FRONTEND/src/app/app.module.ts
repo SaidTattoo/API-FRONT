@@ -13,10 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {MatListModule} from '@angular/material/list';
-
+import {MatMenuModule} from '@angular/material/menu';
 import { AppNavbarComponent } from './shared/app-navbar/app-navbar.component';
 import { AppSidemenuComponent } from './shared/app-sidemenu/app-sidemenu.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { RoutesGuardGuard } from './guard/routes-guard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,10 +39,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,MatMenuModule
   ],
   
-  providers: [],
+  providers: [RoutesGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

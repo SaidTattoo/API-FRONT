@@ -18,9 +18,7 @@ public previsualizacion:any
     imagen: new FormControl()
   });
   constructor(public userService: UserServiceService, private sanitizer : DomSanitizer) { 
-   
   }
-
   ngOnInit(): void {
   }
   onSubmit(){
@@ -32,14 +30,8 @@ public previsualizacion:any
           console.log(resp)
         })
     });
-
-
     console.log(this.createUser.value)
-    
   }
-
-
-
   capturarFile(file:any){
     const archivoCapturado = file.target.files[0]
     this.extraerBase64(archivoCapturado).then((image:any) => {
@@ -49,7 +41,6 @@ public previsualizacion:any
     this.archivos.push(archivoCapturado)
     console.log(archivoCapturado)
   }
-
   extraerBase64 = async ($event:any) => new Promise((resolve, reject) => {
     const unsafeImg = window.URL.createObjectURL($event)
     const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg)
@@ -68,6 +59,4 @@ public previsualizacion:any
       })
     }
   })
-
-
 }
