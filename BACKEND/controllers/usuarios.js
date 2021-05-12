@@ -43,7 +43,6 @@ const registrarUsuario = async(req, res = response) => {
 
 const eliminarUsuario = async( req, res ) => {
 
-
     const {id} = req.params
     const usuario = await Usuario.findByIdAndUpdate(id,{estado: false})
     const usuarioAutenticado = req.usuario
@@ -52,7 +51,6 @@ const eliminarUsuario = async( req, res ) => {
         usuario,
         usuarioAutenticado
     })
-
 }
 
 
