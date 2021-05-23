@@ -14,6 +14,11 @@ const { rolValido, emailExiste } = require('../helpers/db-validators')
 const { usuariosGet , registrarUsuario, eliminarUsuario } = require('../controllers/usuarios')
 const router = Router()
 
+
+
+
+
+
 router.get('/', usuariosGet )
 
 router.delete('/:id', [

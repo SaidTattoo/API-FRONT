@@ -1,8 +1,15 @@
 <div class="body">
     
     <mat-card style="text-align: center;">
-        <form [formGroup]="loginForm" method="POST" (ngSubmit)="onSubmit()">
-          <img  width="100" [src]=imgLogin/>
+        <form [formGroup]="loginForm" method="POST" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+          <div *ngIf="previsualizacion">
+            <img style="border-radius: 50%; width:100px; height:100px; background-size: contain;" [src]="previsualizacion">
+    
+          </div>
+          <div  *ngIf="!previsualizacion">
+            <img  width="100" [src]=imgLogin/>
+          </div>
+         
             <h2>Registrar</h2>
             <mat-form-field class="fullWidth" appearance="outline">
                 <mat-label>Ingresa tu nombre</mat-label>
@@ -34,6 +41,11 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
           </mat-form-field>
+
+       
+            <mat-label>Avatar</mat-label>
+            <input (change)="capturarFile($event)"  type="file"  autocomplete="off"  formControlName="img" >
+           
           <br>
           <button mat-flat-button color="primary" [disabled]="!loginForm.valid">Ingresar</button>
         </form>

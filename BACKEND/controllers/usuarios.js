@@ -1,9 +1,6 @@
 const { request , response} = require('express');
 const bcryptjs = require('bcryptjs');
 
-var retricon = require('retricon-without-canvas');
-var fmt = require('util').format;
-
 const Usuario = require('../models/usuario');
 
 const usuariosGet = async(req = request, res = response) => {
@@ -25,8 +22,7 @@ const usuariosGet = async(req = request, res = response) => {
 }
 
 
-const registrarUsuario = async(req, res = response) => {
-    
+const registrarUsuario = async(req, res = response) => {   
     const { nombre, correo, password, rol } = req.body;
     const usuario = new Usuario({ nombre, correo, password, rol });
     //existe email 
@@ -41,18 +37,16 @@ const registrarUsuario = async(req, res = response) => {
     });
 }
 
-const eliminarUsuario = async( req, res ) => {
 
+const eliminarUsuario = async( req, res ) => {
     const {id} = req.params
     const usuario = await Usuario.findByIdAndUpdate(id,{estado: false})
     const usuarioAutenticado = req.usuario
-
     res.json({
         usuario,
         usuarioAutenticado
     })
 }
-
 
 module.exports = {
     usuariosGet,

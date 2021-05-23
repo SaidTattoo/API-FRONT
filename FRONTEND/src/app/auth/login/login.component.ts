@@ -19,12 +19,16 @@ export class LoginComponent implements OnInit {
   constructor(public authService: AuthServiceService,public router :Router) { }
   hide = true;
   ngOnInit(): void {
-    if(localStorage.getItem('token')){
-      this.router.navigate(['dashboard']);
+    if(localStorage.getItem('token') === undefined){
+      this.router.navigate(['/']);
+    }else{
+      this.router.navigate(['/']);
     }
   }
 
   onSubmit(){
+    
+
     this.authService.login(this.loginForm.value.correo, this.loginForm.value.password).subscribe((data:any) => {
       console.log(data)
       if(data.codeResponse === 200){

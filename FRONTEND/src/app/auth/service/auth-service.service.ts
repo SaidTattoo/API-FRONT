@@ -20,13 +20,14 @@ export class AuthServiceService {
     }
     return this.http.post('http://localhost:3000/api/auth/login', userData)
   }
-  register(nombre:any, correo:any , password:any){
+  register(nombre:any, correo:any , password:any, img:any){
     let userData = {
       nombre,
       correo,
       password,
+      img,
       rol:'USER_ROLE'
     }
-    return this.http.post('http://localhost:3000/api/usuarios', userData)
+    return this.http.post('http://localhost:3000/api/auth/register', userData)
   }
 }

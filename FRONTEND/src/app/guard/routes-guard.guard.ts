@@ -11,6 +11,11 @@ export class RoutesGuardGuard implements CanActivate {
     state: RouterStateSnapshot
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       console.log("canactivate")
-    return true;
+      if(localStorage.getItem('token') === undefined){ 
+        return true;
+      }else{
+        return false;
+      }
+
   }
 }

@@ -10,12 +10,14 @@ const login = async (req, res = response) => {
     const usuario = await Usuario.findOne({ correo });
     if (!usuario) {
       return res.status(400).json({
+        codeResponse:400,
         msg: "usuario | password no son correctos",
       });
     }
     //esta activo el usuario
     if (!usuario.estado) {
       return res.status(400).json({
+        codeResponse:400,
         msg: "usuario | password no son correctos",
       });
     }
@@ -23,6 +25,7 @@ const login = async (req, res = response) => {
     const validPassword = bcryptjs.compareSync(password, usuario.password);
     if (!validPassword) {
       return res.status(400).json({
+        codeResponse:400,
         msg: "usuario | password no son correctos",
       });
     }
@@ -38,11 +41,27 @@ const login = async (req, res = response) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
+      codeResponse:500,
       msg: "hable con el administrador",
     });
   }
 };
 
+const register = async(req, res = response) => {
+  const { nombre, correo, password, rol ,img} = req.body;
+  const usuario = new Usuario({ nombre, correo, password, rol , img});
+  const salt = bcryptjs.genSaltSync();
+  usuario.password = bcryptjs.hashSync( password, salt );
+ // Guardar en BD
+ await usuario.save();
+    res.json({
+        codeResponse:200,
+        usuario
+    });
+    console.log(req.body)
+}
+
 module.exports = {
   login,
+  register
 };

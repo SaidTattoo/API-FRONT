@@ -1,42 +1,123 @@
-<h1>Mantenedor de usuarios</h1>
-<button mat-flat-button (click)="crearUsuario()" color="primary"> Crear usuario</button>
+<h1>Crear Producto</h1>
+<p>
+<mat-form-field appearance="outline">
+    <mat-label>Codigo</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Codigo producto</mat-hint>
+</mat-form-field>
+</p>
+<mat-form-field appearance="outline">
+    <mat-label>Descripcion</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Descripcion del producto</mat-hint>
+</mat-form-field><br>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-form-field appearance="outline">
+    <mat-label>Presentacion</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.website}} </td>
-    </ng-container>
-    <ng-container matColumnDef="Acction">
-        <th mat-header-cell *matHeaderCellDef> Acction </th>
-        <td mat-cell *matCellDef="let element"> 
-            <button (click)="verMas(element.id)"> VER</button>
-            <button (click)="editar(element.id)"> EDITAR</button>
-            <button (click)="eliminar(element.id)"> ELIMINAR</button>
-        </td>
-      </ng-container>
-    
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
+<mat-form-field appearance="outline">
+    <mat-label>Forma</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>Area</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>Observaciones</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>EsInsumo</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>EsArsenal</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>EsControlado</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>EsAuge</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>Recordatorio</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>IDosis</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>ICronicos</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>Activo</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>id_usuario</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>Fecha</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+<mat-form-field appearance="outline">
+    <mat-label>CodigoTFC</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+</mat-form-field><br>
+
+
+

@@ -1,6 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJSDoc = require("swagger-jsdoc")
 const {dbConnection} = require("../database/config")
+const  options  = require("../swaggerOptions")
 class Server {
 
   constructor() {
@@ -9,11 +12,10 @@ class Server {
     //rutas
     this.usuariosPath = '/api/usuarios'
     this.authPath = '/api/auth'
-
     this.conectarDB()
     this.middleware()
     this.routes()
-    
+
   }
 
   async conectarDB(){
@@ -22,9 +24,9 @@ class Server {
 
   middleware(){
       this.app.use(cors())
-
       this.app.use( express.json() );
-
+      const specs = swaggerJSDoc(options)
+      this.app.use('/docs',swaggerUI.serve , swaggerUI.setup(specs))
   }
 
   routes() {
